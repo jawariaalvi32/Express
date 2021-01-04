@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="style/contactStyle.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+          <a href="Home.html" class="w3-bar-item w3-button">Gourmet au Catering</a>
+          <!-- Right-sided navbar links. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="About.html" class="w3-bar-item w3-button">About</a>
+            <a href="Home.html#menu" class="w3-bar-item w3-button">Menu</a>
+            <a href="Contact.html" class="w3-bar-item w3-button">Contact</a>
+          </div>
+        </div>
+    </div>
+    <h2 class="align">Contact Section</h2>
+
+    <div class="container padding-64" id="contact">
+        <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+        <p class="text-blue-grey large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+        <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="input padding-16" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="input padding-16" type="number" placeholder="How many people" required name="People"></p>
+          <p><input class="input padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+          <p><input class="input padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+          <p><button class="button light-grey section" type="submit">SEND MESSAGE</button></p>
+        </form>
+    </div>
+</body>
+</html>
