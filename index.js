@@ -47,7 +47,7 @@ app.post('/Signup.html', (req, res) => {
             password: req.body.psw,
             id:users.length+1
         })
-        return res.redirect('/Signin.html');
+        res.redirect('/Signin.html');
     }  
 })
 
