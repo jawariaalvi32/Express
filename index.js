@@ -10,9 +10,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 
 // used to bind or listen connection on host and port
-app.listen(PORT, (req, res) => {
-    console.log('Running at',PORT)
-})
+// app.listen(PORT, (req, res) => {
+//     console.log('Running at',PORT)
+// })
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
 // app.get('/', (req, res) => {
 //     res.sendFile(path.join(__dirname,"public", "Home.html"))
