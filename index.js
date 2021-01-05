@@ -26,12 +26,40 @@ app.listen(PORT, (req, res) => {
 //     res.sendFile(path.join(__dirname,"public", "Contact.html"))
 // })
 
+let users = [
+    {id:1,email:'faz.pak@gmail.com',password:'1111'},
+    {id:2,email:'abeer@gmail.com',password:'2222'}    
+]
 app.use(express.static(path.join(__dirname,"public")))
-// app.use(express.static(path.join(__dirname,"register")))
+app.use(express.static(path.join(__dirname,"register")))
 
-app.get('/Signup.html', (req, res) => {
-    res.sendFile(path.join(__dirname,"register", "Signup.html"))
-})
+// app.get('/Signup.html', (req, res) => {
+//     res.sendFile(path.join(__dirname,"register", "Signup.html"))
+// })
+
 app.post('/Signup.html', (req, res) => {
-    res.send(req.body)
+    let found = users.some((item)=>item.email == req.body.email)
+    if (found) {
+        res.send("Email already exist")
+    } else {
+        users.push({
+            email:req.body.email,
+            password: req.body.psw,
+            id:users.length+1
+        })
+        return res.redirect('/Signin.html');
+    }  
+})
+
+// app.get('/Signin.html', (req, res) => {
+//     res.sendFile(path.join(__dirname,"register", "Signin.html"))
+// })
+app.post('/Signin.html', (req, res) => {
+    let found = users.some((item)=>item.email == req.body.email && item.password == req.body.psw)
+
+    if (found) {
+        res.send("Welcome")
+    } else {
+        res.send("Incorrect email or password")
+    }  
 })
